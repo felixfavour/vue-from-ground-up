@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- BASIC SCRIPT SYNTAX CDN BELOW -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+  </head>
+  <body>
+    <div id="app">{{ message }}</div>
+
+    <!-- 
+      Import Maps are used to control how the browser resolves module specifiers
+      when a module needs to be used across several JS modules
+    -->
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+
+    <!-- BASIC SCRIPT SYNTAX -->
+    <!-- <script>
+      const { createApp, ref } = Vue
+
+      createApp({
+        setup() {
+          const message = ref("Hello Favour")
+
+          return { message }
+        },
+      }).mount("#app")
+    </script> -->
+
+    <!-- ES MODULE SCRIPT SYNTAX -->
+    <script type="module">
+      import { createApp, ref } from "vue"
+      import HomeComponent from "./home-component.js"
+      import { ChildComp } from "./child-component.js"
+
+      const vueApp = createApp(HomeComponent)
+      vueApp.component("comp", ChildComp)
+      vueApp.mount("#app")
+    </script>
+  </body>
+</html>
