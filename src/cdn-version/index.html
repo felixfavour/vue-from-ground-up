@@ -39,10 +39,10 @@
     <script type="module">
       import { createApp, ref } from "vue"
       import HomeComponent from "./home-component.js"
-      import { ChildComp } from "./child-component.js"
+      import ChildComponent from "./child-component.js"
 
       const vueApp = createApp(HomeComponent)
-      vueApp.component("comp", ChildComp)
+      vueApp.component("comp", ChildComponent)
       vueApp.mount("#app")
     </script>
   </body>

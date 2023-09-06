@@ -1,7 +1,6 @@
 import { ref } from "vue"
 
-export const ChildComp = {
-
+export default {
   setup() {
     const message = ref("Hello Favour, from Child Component")
     return {
