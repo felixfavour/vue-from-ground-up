@@ -6,6 +6,8 @@ import TemplateRefs from './components/TemplateRefs.vue';
 import AsyncComponents from './components/AsyncComponents.vue';
 import TestingSlots from './components/TestingSlots.vue';
 import TestingUnnamedSlots from './components/TestingUnnamedSlots.vue';
+import TestingTransitions from './components/TestingTransitions.vue';
+import TestingTransitionGroups from './components/TestingTransitionGroups.vue';
 
 const selectValue = ref('')
 const componentRef = ref(null)
@@ -74,6 +76,12 @@ onMounted(() => {
     <TestingUnnamedSlots #=slotProps>
       <p>Helllloooo {{  slotProps.message  }}</p>
     </TestingUnnamedSlots>
+
+    <!-- Testing <Transition>s -->
+    <TestingTransitions />
+
+    <!-- Testing <TransitionGroup>s -->
+    <TestingTransitionGroups />
   </main>
 </template>
 
