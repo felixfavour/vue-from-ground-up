@@ -12,13 +12,13 @@
     </div>
 
     <div class="ctn">
-      Just a div at the bottom
+      Just a div at the bottom, with base url: {{  $baseURL  }}
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, inject, onMounted, ref } from 'vue';
 
 const cards = ref([
   'Ada is a boy',
@@ -29,11 +29,15 @@ const cards = ref([
   'Lez go!'
 ])
 const filter = ref('')
+const random = inject('random')
+
+console.log(random.greetings)
 
 const filteredCards = computed(() => {
   if (filter.value === '') {
     return cards.value
   }
+  console.log(this.$baseURL)
   return cards.value.filter(card => card.toLowerCase().includes(filter.value))
 })
 

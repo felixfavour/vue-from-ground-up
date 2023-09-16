@@ -8,6 +8,7 @@ import TestingSlots from './components/TestingSlots.vue';
 import TestingUnnamedSlots from './components/TestingUnnamedSlots.vue';
 import TestingTransitions from './components/TestingTransitions.vue';
 import TestingTransitionGroups from './components/TestingTransitionGroups.vue';
+import OptionsAPIComponent from './components/OptionsAPIComponent.vue';
 
 const selectValue = ref('')
 const componentRef = ref(null)
@@ -82,6 +83,8 @@ onMounted(() => {
 
     <!-- Testing <TransitionGroup>s -->
     <TestingTransitionGroups />
+
+    <OptionsAPIComponent />
   </main>
 </template>
 
